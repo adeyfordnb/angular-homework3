@@ -1,0 +1,14 @@
+<div class="container mb-5">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src={{gitHubService.foundUser.avatar_url}} alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Nickname: {{ gitHubService.foundUser.login }}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Followers: {{ gitHubService.foundUser.followers }}</li>
+      <li class="list-group-item">Following: {{ gitHubService.foundUser.following }}</li>
+      <li class="list-group-item">Created at: {{ gitHubService.foundUser.created_at }}</li>
+    </ul>
+    <button class="btn btn-success btn-block mt-3" routerLink="/about">More info!</button>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container d-flex mt-5">
+  <div class="card card-body m-auto col-6">
+    <form #form="ngForm" novalidate (ngSubmit)="onSearch(form)">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter nickname..."
+          [(ngModel)]="nickname"
+          name="nickname"
+          #nickName="ngModel"
+          (keyup)=" showContinueBtn = false "
+          required
+        >
+      </div>
+      <button *ngIf="!showContinueBtn" class="btn btn-primary btn-block">Search</button>
+      <button *ngIf="showContinueBtn" class="btn btn-primary btn-block" routerLink="/info">Get info about: {{ user.login }}</button>
+      <button class="btn btn-success btn-block mt-3" routerLink="/about">More info!</button>
+
+      <p *ngIf="searchingUser" class="mt-2 mb-2 text-center">Please wait...</p>
+
+    </form>
+  </div>
+</div>
